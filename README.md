@@ -4,7 +4,7 @@
 
 BioDataQC is an independent **Python / Streamlit prototype** for inspecting biomedical sequencing data deliveries. It checks configured metadata and FASTQ requirements, explains structural failures, preserves validation history in SQLite, and prepares verifiable delivery packages. An optional integration displays sequencing-quality measurements from **FastQC 0.12.1**.
 
-> **Français :** BioDataQC est un prototype personnel de contrôle qualité des livraisons de données de séquençage : validation des FASTQ et métadonnées, détection des incohérences, traçabilité SQLite, rapports et préparation de livrables vérifiables. Il n'est pas affilié à PRECURSION.
+> **Français :** BioDataQC est un prototype personnel de contrôle qualité des livraisons de données de séquençage : validation des FASTQ et métadonnées, détection des incohérences, traçabilité SQLite, rapports et préparation de livrables vérifiables. Il s'agit d'un projet personnel et indépendant.
 
 **[Presentation and short video demonstrations (Google Slides)](https://docs.google.com/presentation/d/1M2GNWMKmP4aNzXjqgwhFHxMF63QDmcOHh7aBTGhZb48/edit?usp=sharing)**
 
