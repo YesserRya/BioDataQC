@@ -1,7 +1,0 @@
-sample_id,condition,tissue,notes
-S001,Control,Liver,Synthetic fixture for S001; no real sample
-S002,Control,Liver,Synthetic fixture for S002; no real sample
-S003,Control,Liver,Synthetic fixture for S003; no real sample
-S004,Treated,Liver,Synthetic fixture for S004; no real sample
-S005,Treated,Liver,Synthetic fixture for S005; no real sample
-S006,Treated,Liver,Synthetic fixture for S006; no real sample
