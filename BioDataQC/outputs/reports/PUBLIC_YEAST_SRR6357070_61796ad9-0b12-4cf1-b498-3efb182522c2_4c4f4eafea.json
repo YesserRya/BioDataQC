@@ -1,0 +1,467 @@
+{
+  "report_schema_version": "1.1.0",
+  "rules_version": "1.1.0",
+  "run_id": "61796ad9-0b12-4cf1-b498-3efb182522c2",
+  "started_at": "2026-11-12T00:03:11.099748+00:00",
+  "finished_at": "2026-11-12T00:03:13.597227+00:00",
+  "dataset_path": "/home/yesser/Precursion/BioDataQC/data/public_yeast",
+  "project_id": "PUBLIC_YEAST_SRR6357070",
+  "status": "READY",
+  "counts": {
+    "blocking_findings": 0,
+    "warnings": 0,
+    "execution_errors": 0,
+    "required_checks_not_run": 0,
+    "passed_checks": 14,
+    "valid_fastq_files": 2,
+    "records_scanned": 100000
+  },
+  "inventory_summary": {
+    "expected_samples": 1,
+    "metadata_rows": 1,
+    "expected_files": 2,
+    "observed_regular_files": 2,
+    "present_expected_files": 2,
+    "missing_expected_files": 0,
+    "unexpected_entries": 0,
+    "wrong_type_expected_entries": 0
+  },
+  "requirements": {
+    "specification_version": "1.1.0",
+    "project_id": "PUBLIC_YEAST_SRR6357070",
+    "client_label": "Public research demonstration",
+    "synthetic_data_only": false,
+    "expected_samples": [
+      "SRR6357070"
+    ],
+    "metadata": {
+      "file": "samples.csv",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "one_row_per_sample": true,
+      "sample_id_column": "sample_id",
+      "required_columns": [
+        "sample_id",
+        "organism",
+        "run_accession",
+        "geo_sample",
+        "condition"
+      ],
+      "optional_columns": [
+        "notes"
+      ],
+      "allowed_values": {
+        "organism": [
+          "Saccharomyces cerevisiae"
+        ],
+        "condition": [
+          "Wild-type"
+        ]
+      },
+      "blank_required_values": "block",
+      "blank_or_absent_notes": "warn",
+      "duplicate_sample_ids": "block",
+      "missing_or_unexpected_sample_ids": "block",
+      "unexpected_columns": "warn",
+      "nonblank_values_with_outer_whitespace": "block",
+      "case_sensitive_values": true,
+      "automatic_value_correction": false
+    },
+    "sequencing": {
+      "directory": "sequencing",
+      "layout": "paired_end",
+      "reads": [
+        "R1",
+        "R2"
+      ],
+      "files_per_read_per_sample": 1,
+      "filename_template": "{sample_id}_{read}.fastq.gz",
+      "compression": "gzip",
+      "empty_files": "block",
+      "unexpected_files": "block",
+      "unexpected_subdirectories": "block",
+      "scan_scope": "immediate_children"
+    },
+    "fastq": {
+      "format": "four_line",
+      "encoding": "ascii",
+      "sequence_alphabet": "ACGTN",
+      "allow_empty_sequences": false,
+      "separator_line": "plus_or_matching_header",
+      "quality_encoding": "phred33",
+      "quality_ascii_min": 33,
+      "quality_ascii_max": 126,
+      "sequence_quality_lengths_must_match": true,
+      "mate_for_read": {
+        "R1": "1",
+        "R2": "2"
+      },
+      "paired_record_counts_must_match": true,
+      "paired_read_ids_must_match_in_order": true,
+      "minimum_records_per_file": 50000,
+      "scan_all_records": true,
+      "header_profile": "sra_spot_mate"
+    },
+    "integrity": {
+      "algorithm": "sha256",
+      "snapshot_inputs": [
+        "requirements.json",
+        "samples.csv",
+        "sequencing/*"
+      ],
+      "require_independent_source_checksums": false,
+      "verify_staged_copy_against_validation_snapshot": true,
+      "reference_sha256": {
+        "sequencing/SRR6357070_R1.fastq.gz": "3f50541fa9cf2bedc87e7b682ada0fccfdfcd6d27b9bb81f17be230ff140ebe7",
+        "sequencing/SRR6357070_R2.fastq.gz": "8590e1e01e568fba256aa7dced40519604cbb111ee44ab106a3dcb869660aaf4"
+      }
+    },
+    "packaging": {
+      "mode": "local_staging_only",
+      "report_format": "html",
+      "manifest_format": "csv",
+      "manifest_columns": [
+        "relative_path",
+        "sample_id",
+        "read",
+        "size_bytes",
+        "sha256"
+      ],
+      "exclude_manifest_from_own_inventory": true,
+      "preserve_original_inputs": true,
+      "allow_blockers": false,
+      "allow_warnings": true,
+      "allow_incomplete_required_checks": false
+    },
+    "provenance": {
+      "data_origin": "public_experimental_subset",
+      "study_accession": "GSE110004",
+      "run_accession": "SRR6357070",
+      "geo_sample": "GSM2879618",
+      "organism": "Saccharomyces cerevisiae",
+      "sample_title": "Wild-type total RNA-Seq biological replicate 1",
+      "source_url": "https://github.com/nf-core/test-datasets/tree/9dd6d014f560e182047992834a8d267214fbccd1/testdata/GSE110004",
+      "source_readme_url": "https://github.com/nf-core/test-datasets/blob/9dd6d014f560e182047992834a8d267214fbccd1/README.md",
+      "study_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE110004",
+      "repository_commit": "9dd6d014f560e182047992834a8d267214fbccd1",
+      "expected_records_per_mate": 50000,
+      "processing": "nf-core filtered experimental reads using a yeast chromosome-I Kraken2 reference, then subsampled each mate to 50,000 records with seqtk seed 100. BioDataQC preserves the published compressed bytes and changes only the local filenames.",
+      "checksum_scope": "SHA-256 references pin the nf-core subset at the recorded repository commit. They establish equality with that fixture, not independent integrity of the original full archive run or biological quality.",
+      "files": [
+        {
+          "original_name": "SRR6357070_1.fastq.gz",
+          "local_path": "sequencing/SRR6357070_R1.fastq.gz",
+          "url": "https://raw.githubusercontent.com/nf-core/test-datasets/9dd6d014f560e182047992834a8d267214fbccd1/testdata/GSE110004/SRR6357070_1.fastq.gz",
+          "size_bytes": 2239317,
+          "sha256": "3f50541fa9cf2bedc87e7b682ada0fccfdfcd6d27b9bb81f17be230ff140ebe7",
+          "git_blob_sha1": "1842fc6bf799e1744caef4c36dd53d02e594fc28"
+        },
+        {
+          "original_name": "SRR6357070_2.fastq.gz",
+          "local_path": "sequencing/SRR6357070_R2.fastq.gz",
+          "url": "https://raw.githubusercontent.com/nf-core/test-datasets/9dd6d014f560e182047992834a8d267214fbccd1/testdata/GSE110004/SRR6357070_2.fastq.gz",
+          "size_bytes": 2232117,
+          "sha256": "8590e1e01e568fba256aa7dced40519604cbb111ee44ab106a3dcb869660aaf4",
+          "git_blob_sha1": "2d2e36e54b74ccc4614c0602a3623d02a2b0aa07"
+        }
+      ],
+      "deliberate_faults": [],
+      "prepared_at": "2026-11-11T23:52:35.510659+00:00"
+    }
+  },
+  "inventory": [
+    {
+      "relative_path": "sequencing/SRR6357070_R1.fastq.gz",
+      "sample_id": "SRR6357070",
+      "read": "R1",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 2239317
+    },
+    {
+      "relative_path": "sequencing/SRR6357070_R2.fastq.gz",
+      "sample_id": "SRR6357070",
+      "read": "R2",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 2232117
+    }
+  ],
+  "metadata_columns": [
+    "sample_id",
+    "organism",
+    "run_accession",
+    "geo_sample",
+    "condition",
+    "notes"
+  ],
+  "metadata_rows": [
+    {
+      "sample_id": "SRR6357070",
+      "organism": "Saccharomyces cerevisiae",
+      "run_accession": "SRR6357070",
+      "geo_sample": "GSM2879618",
+      "condition": "Wild-type",
+      "notes": "Public experimental subset from nf-core; 50,000 pairs; original compressed bytes retained."
+    }
+  ],
+  "input_sha256": {
+    "requirements.json": "0304dd43ec21571389f7036eca6e00207f540544cf3eeef699f1faec7066e144",
+    "samples.csv": "ae89465f640fe1471472151d9feb6b322c3f109c6e6cd9402bf5a581073e2997",
+    "sequencing/SRR6357070_R1.fastq.gz": "3f50541fa9cf2bedc87e7b682ada0fccfdfcd6d27b9bb81f17be230ff140ebe7",
+    "sequencing/SRR6357070_R2.fastq.gz": "8590e1e01e568fba256aa7dced40519604cbb111ee44ab106a3dcb869660aaf4"
+  },
+  "expected_check_ids": [
+    "CFG001",
+    "CSV001",
+    "FILE001",
+    "META001",
+    "META002",
+    "META003",
+    "META004",
+    "SNAP001",
+    "REF001",
+    "SRC001",
+    "FILE001:sequencing/SRR6357070_R1.fastq.gz",
+    "FILE001:sequencing/SRR6357070_R2.fastq.gz",
+    "FASTQ001:sequencing/SRR6357070_R1.fastq.gz",
+    "FASTQ001:sequencing/SRR6357070_R2.fastq.gz",
+    "PAIR001:SRR6357070"
+  ],
+  "checks": [
+    {
+      "check_id": "CFG001",
+      "rule_id": "CFG001",
+      "outcome": "PASS",
+      "message": "All declared validation policies are supported.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "CSV001",
+      "rule_id": "CSV001",
+      "outcome": "PASS",
+      "message": "CSV was parsed without ambiguous headers or field counts.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FILE001",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Immediate sequencing-directory entries were inventoried.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "META001",
+      "rule_id": "META001",
+      "outcome": "PASS",
+      "message": "Required columns and values are present.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "META002",
+      "rule_id": "META002",
+      "outcome": "PASS",
+      "message": "Exactly one metadata row exists for every expected sample.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "META003",
+      "rule_id": "META003",
+      "outcome": "PASS",
+      "message": "Present nonblank values satisfy vocabulary and whitespace rules.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "META004",
+      "rule_id": "META004",
+      "outcome": "PASS",
+      "message": "Optional metadata is populated and no unexpected columns were found.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FILE001:sequencing/SRR6357070_R1.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "SRR6357070",
+      "file_path": "sequencing/SRR6357070_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/SRR6357070_R1.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 50000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "SRR6357070",
+      "file_path": "sequencing/SRR6357070_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 50000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/SRR6357070_R2.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "SRR6357070",
+      "file_path": "sequencing/SRR6357070_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/SRR6357070_R2.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 50000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "SRR6357070",
+      "file_path": "sequencing/SRR6357070_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 50000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "PAIR001:SRR6357070",
+      "rule_id": "PAIR001",
+      "outcome": "PASS",
+      "message": "Mate record counts and ordered read IDs match.",
+      "required": true,
+      "severity": null,
+      "sample_id": "SRR6357070",
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "R1_records": 50000,
+        "R2_records": 50000,
+        "R1_read_ids_sha256": "ec6fcb5635de1a2dc64dafc421a0d2bd8d6b106c6ca943aab259b05df6448471",
+        "R2_read_ids_sha256": "ec6fcb5635de1a2dc64dafc421a0d2bd8d6b106c6ca943aab259b05df6448471"
+      }
+    },
+    {
+      "check_id": "SRC001",
+      "rule_id": "SRC001",
+      "outcome": "PASS",
+      "message": "Compressed FASTQ bytes match the configured source SHA-256 references.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "reference_source": "https://github.com/nf-core/test-datasets/tree/9dd6d014f560e182047992834a8d267214fbccd1/testdata/GSE110004",
+        "checksum_scope": "SHA-256 references pin the nf-core subset at the recorded repository commit. They establish equality with that fixture, not independent integrity of the original full archive run or biological quality.",
+        "mismatched_files": []
+      }
+    },
+    {
+      "check_id": "SNAP001",
+      "rule_id": "SNAP001",
+      "outcome": "PASS",
+      "message": "Input fingerprints and inventory are unchanged at the final check.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "fingerprinted_files": 4,
+        "algorithm": "sha256"
+      }
+    },
+    {
+      "check_id": "REF001",
+      "rule_id": "REF001",
+      "outcome": "NOT_RUN",
+      "message": "Independent source checksums are not required by this specification.",
+      "required": false,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    }
+  ]
+}

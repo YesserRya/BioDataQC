@@ -1,0 +1,987 @@
+{
+  "report_schema_version": "1.1.0",
+  "rules_version": "1.0.0",
+  "run_id": "f3dcdaea-d15a-4c44-9a85-d9416a663695",
+  "started_at": "2026-11-11T21:44:01.200131+00:00",
+  "finished_at": "2026-11-11T21:44:01.337495+00:00",
+  "dataset_path": "/home/yesser/Precursion/BioDataQC/data/clean",
+  "project_id": "DEMO_001",
+  "status": "READY",
+  "counts": {
+    "blocking_findings": 0,
+    "warnings": 0,
+    "execution_errors": 0,
+    "required_checks_not_run": 0,
+    "passed_checks": 38,
+    "valid_fastq_files": 12,
+    "records_scanned": 12000
+  },
+  "inventory_summary": {
+    "expected_samples": 6,
+    "metadata_rows": 6,
+    "expected_files": 12,
+    "observed_regular_files": 12,
+    "present_expected_files": 12,
+    "missing_expected_files": 0,
+    "unexpected_entries": 0,
+    "wrong_type_expected_entries": 0
+  },
+  "requirements": {
+    "specification_version": "1.0.0",
+    "project_id": "DEMO_001",
+    "client_label": "Fictional Client A",
+    "synthetic_data_only": true,
+    "expected_samples": [
+      "S001",
+      "S002",
+      "S003",
+      "S004",
+      "S005",
+      "S006"
+    ],
+    "metadata": {
+      "file": "samples.csv",
+      "encoding": "utf-8",
+      "delimiter": ",",
+      "one_row_per_sample": true,
+      "sample_id_column": "sample_id",
+      "required_columns": [
+        "sample_id",
+        "condition",
+        "tissue"
+      ],
+      "optional_columns": [
+        "notes"
+      ],
+      "allowed_values": {
+        "condition": [
+          "Control",
+          "Treated"
+        ]
+      },
+      "blank_required_values": "block",
+      "blank_or_absent_notes": "warn",
+      "duplicate_sample_ids": "block",
+      "missing_or_unexpected_sample_ids": "block",
+      "unexpected_columns": "warn",
+      "nonblank_values_with_outer_whitespace": "block",
+      "case_sensitive_values": true,
+      "automatic_value_correction": false
+    },
+    "sequencing": {
+      "directory": "sequencing",
+      "layout": "paired_end",
+      "reads": [
+        "R1",
+        "R2"
+      ],
+      "files_per_read_per_sample": 1,
+      "filename_template": "{sample_id}_{read}.fastq.gz",
+      "compression": "gzip",
+      "empty_files": "block",
+      "unexpected_files": "block",
+      "unexpected_subdirectories": "block",
+      "scan_scope": "immediate_children"
+    },
+    "fastq": {
+      "format": "four_line",
+      "encoding": "ascii",
+      "sequence_alphabet": "ACGTN",
+      "allow_empty_sequences": false,
+      "separator_line": "+",
+      "quality_encoding": "phred33",
+      "quality_ascii_min": 33,
+      "quality_ascii_max": 126,
+      "sequence_quality_lengths_must_match": true,
+      "header_template": "@{read_id}/{mate}",
+      "read_id_pattern": "READ_[0-9]{6}",
+      "mate_for_read": {
+        "R1": "1",
+        "R2": "2"
+      },
+      "paired_record_counts_must_match": true,
+      "paired_read_ids_must_match_in_order": true,
+      "minimum_records_per_file": 1,
+      "scan_all_records": true
+    },
+    "integrity": {
+      "algorithm": "sha256",
+      "snapshot_inputs": [
+        "requirements.json",
+        "samples.csv",
+        "sequencing/*"
+      ],
+      "require_independent_source_checksums": false,
+      "verify_staged_copy_against_validation_snapshot": true
+    },
+    "packaging": {
+      "mode": "local_staging_only",
+      "report_format": "html",
+      "manifest_format": "csv",
+      "manifest_columns": [
+        "relative_path",
+        "sample_id",
+        "read",
+        "size_bytes",
+        "sha256"
+      ],
+      "exclude_manifest_from_own_inventory": true,
+      "preserve_original_inputs": true,
+      "allow_blockers": false,
+      "allow_warnings": true,
+      "allow_incomplete_required_checks": false
+    }
+  },
+  "inventory": [
+    {
+      "relative_path": "sequencing/S001_R1.fastq.gz",
+      "sample_id": "S001",
+      "read": "R1",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36863
+    },
+    {
+      "relative_path": "sequencing/S001_R2.fastq.gz",
+      "sample_id": "S001",
+      "read": "R2",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36954
+    },
+    {
+      "relative_path": "sequencing/S002_R1.fastq.gz",
+      "sample_id": "S002",
+      "read": "R1",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36872
+    },
+    {
+      "relative_path": "sequencing/S002_R2.fastq.gz",
+      "sample_id": "S002",
+      "read": "R2",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36899
+    },
+    {
+      "relative_path": "sequencing/S003_R1.fastq.gz",
+      "sample_id": "S003",
+      "read": "R1",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36923
+    },
+    {
+      "relative_path": "sequencing/S003_R2.fastq.gz",
+      "sample_id": "S003",
+      "read": "R2",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36870
+    },
+    {
+      "relative_path": "sequencing/S004_R1.fastq.gz",
+      "sample_id": "S004",
+      "read": "R1",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36938
+    },
+    {
+      "relative_path": "sequencing/S004_R2.fastq.gz",
+      "sample_id": "S004",
+      "read": "R2",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36902
+    },
+    {
+      "relative_path": "sequencing/S005_R1.fastq.gz",
+      "sample_id": "S005",
+      "read": "R1",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36901
+    },
+    {
+      "relative_path": "sequencing/S005_R2.fastq.gz",
+      "sample_id": "S005",
+      "read": "R2",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36931
+    },
+    {
+      "relative_path": "sequencing/S006_R1.fastq.gz",
+      "sample_id": "S006",
+      "read": "R1",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36867
+    },
+    {
+      "relative_path": "sequencing/S006_R2.fastq.gz",
+      "sample_id": "S006",
+      "read": "R2",
+      "expected": true,
+      "status": "PRESENT",
+      "entry_type": "FILE",
+      "size_bytes": 36843
+    }
+  ],
+  "metadata_columns": [
+    "sample_id",
+    "condition",
+    "tissue",
+    "notes"
+  ],
+  "metadata_rows": [
+    {
+      "sample_id": "S001",
+      "condition": "Control",
+      "tissue": "Liver",
+      "notes": "Synthetic fixture for S001; no real sample"
+    },
+    {
+      "sample_id": "S002",
+      "condition": "Control",
+      "tissue": "Liver",
+      "notes": "Synthetic fixture for S002; no real sample"
+    },
+    {
+      "sample_id": "S003",
+      "condition": "Control",
+      "tissue": "Liver",
+      "notes": "Synthetic fixture for S003; no real sample"
+    },
+    {
+      "sample_id": "S004",
+      "condition": "Treated",
+      "tissue": "Liver",
+      "notes": "Synthetic fixture for S004; no real sample"
+    },
+    {
+      "sample_id": "S005",
+      "condition": "Treated",
+      "tissue": "Liver",
+      "notes": "Synthetic fixture for S005; no real sample"
+    },
+    {
+      "sample_id": "S006",
+      "condition": "Treated",
+      "tissue": "Liver",
+      "notes": "Synthetic fixture for S006; no real sample"
+    }
+  ],
+  "input_sha256": {
+    "requirements.json": "ed3236f4625b99f72951dc44241b9c066fa2ff610f84ca3dd22bc765f259f14b",
+    "samples.csv": "3c44da400a1967f2ce4a9f992e3efc61a8818f3bff3bdcafa980d142e03a1a68",
+    "sequencing/S001_R1.fastq.gz": "3eea82f210728b97ae6dd7cbb60eac49ecacfb8ea541e56146c4ee71a860d89d",
+    "sequencing/S001_R2.fastq.gz": "e6cedf6731c3bef992165c3a94efba6769439c41c68feadcef570705c4022a0e",
+    "sequencing/S002_R1.fastq.gz": "87de23970a608de75ea5326d859f3895e4cabcb0724c6113651f24f00b6f6b7d",
+    "sequencing/S002_R2.fastq.gz": "63e85cb680c80fa949228d8f3c5b78f4c836a7faa23727eb50f43cba34ff28be",
+    "sequencing/S003_R1.fastq.gz": "4dd5dfd78958e06cca04c5dac82f34176d1ce226de187faadc9d4f44b022b1e2",
+    "sequencing/S003_R2.fastq.gz": "324eff2f9175f82fc1c9b9e1dd74b9c02181297c3b802d2928c13e546eb540fb",
+    "sequencing/S004_R1.fastq.gz": "3dd98d1f4888d4d87a8880a81c476d7b28b7b65aa6ac9357de3c12b46b12ca9b",
+    "sequencing/S004_R2.fastq.gz": "88d19a6f5611ea5d7d12378110a8595bd0b8dfd6ebda3b08d51fb1e121b4d87b",
+    "sequencing/S005_R1.fastq.gz": "7a4be0aa849fde2fe683264325804921278973ddfb7ffbb30f29df75c806d2b5",
+    "sequencing/S005_R2.fastq.gz": "18c02fcb918edfa0f1dea3bc071e4e96165c776a1e0300e6af52666bc9aebba7",
+    "sequencing/S006_R1.fastq.gz": "2699c010928f2215900e369421672c34a999e10b4e25109a061aa0a15a2a7547",
+    "sequencing/S006_R2.fastq.gz": "ec5665c577b1348e53e46dfb44fc108106fa06a884ce99220ce31ac47ee5c1b6"
+  },
+  "expected_check_ids": [
+    "CFG001",
+    "CSV001",
+    "FILE001",
+    "META001",
+    "META002",
+    "META003",
+    "META004",
+    "SNAP001",
+    "REF001",
+    "FILE001:sequencing/S001_R1.fastq.gz",
+    "FILE001:sequencing/S001_R2.fastq.gz",
+    "FILE001:sequencing/S002_R1.fastq.gz",
+    "FILE001:sequencing/S002_R2.fastq.gz",
+    "FILE001:sequencing/S003_R1.fastq.gz",
+    "FILE001:sequencing/S003_R2.fastq.gz",
+    "FILE001:sequencing/S004_R1.fastq.gz",
+    "FILE001:sequencing/S004_R2.fastq.gz",
+    "FILE001:sequencing/S005_R1.fastq.gz",
+    "FILE001:sequencing/S005_R2.fastq.gz",
+    "FILE001:sequencing/S006_R1.fastq.gz",
+    "FILE001:sequencing/S006_R2.fastq.gz",
+    "FASTQ001:sequencing/S001_R1.fastq.gz",
+    "FASTQ001:sequencing/S001_R2.fastq.gz",
+    "FASTQ001:sequencing/S002_R1.fastq.gz",
+    "FASTQ001:sequencing/S002_R2.fastq.gz",
+    "FASTQ001:sequencing/S003_R1.fastq.gz",
+    "FASTQ001:sequencing/S003_R2.fastq.gz",
+    "FASTQ001:sequencing/S004_R1.fastq.gz",
+    "FASTQ001:sequencing/S004_R2.fastq.gz",
+    "FASTQ001:sequencing/S005_R1.fastq.gz",
+    "FASTQ001:sequencing/S005_R2.fastq.gz",
+    "FASTQ001:sequencing/S006_R1.fastq.gz",
+    "FASTQ001:sequencing/S006_R2.fastq.gz",
+    "PAIR001:S001",
+    "PAIR001:S002",
+    "PAIR001:S003",
+    "PAIR001:S004",
+    "PAIR001:S005",
+    "PAIR001:S006"
+  ],
+  "checks": [
+    {
+      "check_id": "CFG001",
+      "rule_id": "CFG001",
+      "outcome": "PASS",
+      "message": "All declared v1 policies are supported.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "CSV001",
+      "rule_id": "CSV001",
+      "outcome": "PASS",
+      "message": "CSV was parsed without ambiguous headers or field counts.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FILE001",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Immediate sequencing-directory entries were inventoried.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "META001",
+      "rule_id": "META001",
+      "outcome": "PASS",
+      "message": "Required columns and values are present.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "META002",
+      "rule_id": "META002",
+      "outcome": "PASS",
+      "message": "Exactly one metadata row exists for every expected sample.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "META003",
+      "rule_id": "META003",
+      "outcome": "PASS",
+      "message": "Present nonblank values satisfy vocabulary and whitespace rules.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "META004",
+      "rule_id": "META004",
+      "outcome": "PASS",
+      "message": "Optional metadata is populated and no unexpected columns were found.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FILE001:sequencing/S001_R1.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S001",
+      "file_path": "sequencing/S001_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S001_R1.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S001",
+      "file_path": "sequencing/S001_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S001_R2.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S001",
+      "file_path": "sequencing/S001_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S001_R2.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S001",
+      "file_path": "sequencing/S001_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S002_R1.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S002",
+      "file_path": "sequencing/S002_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S002_R1.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S002",
+      "file_path": "sequencing/S002_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S002_R2.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S002",
+      "file_path": "sequencing/S002_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S002_R2.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S002",
+      "file_path": "sequencing/S002_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S003_R1.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S003",
+      "file_path": "sequencing/S003_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S003_R1.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S003",
+      "file_path": "sequencing/S003_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S003_R2.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S003",
+      "file_path": "sequencing/S003_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S003_R2.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S003",
+      "file_path": "sequencing/S003_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S004_R1.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S004",
+      "file_path": "sequencing/S004_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S004_R1.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S004",
+      "file_path": "sequencing/S004_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S004_R2.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S004",
+      "file_path": "sequencing/S004_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S004_R2.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S004",
+      "file_path": "sequencing/S004_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S005_R1.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S005",
+      "file_path": "sequencing/S005_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S005_R1.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S005",
+      "file_path": "sequencing/S005_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S005_R2.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S005",
+      "file_path": "sequencing/S005_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S005_R2.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S005",
+      "file_path": "sequencing/S005_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S006_R1.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S006",
+      "file_path": "sequencing/S006_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S006_R1.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S006",
+      "file_path": "sequencing/S006_R1.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "FILE001:sequencing/S006_R2.fastq.gz",
+      "rule_id": "FILE001",
+      "outcome": "PASS",
+      "message": "Expected regular file is present.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S006",
+      "file_path": "sequencing/S006_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    },
+    {
+      "check_id": "FASTQ001:sequencing/S006_R2.fastq.gz",
+      "rule_id": "FASTQ001",
+      "outcome": "PASS",
+      "message": "All 1000 FASTQ records satisfy the configured structural checks.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S006",
+      "file_path": "sequencing/S006_R2.fastq.gz",
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "records_scanned": 1000,
+        "scan_complete": true,
+        "malformed_records": 0,
+        "stream_error": null
+      }
+    },
+    {
+      "check_id": "PAIR001:S001",
+      "rule_id": "PAIR001",
+      "outcome": "PASS",
+      "message": "Mate record counts and ordered read IDs match.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S001",
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "R1_records": 1000,
+        "R2_records": 1000,
+        "R1_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a",
+        "R2_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a"
+      }
+    },
+    {
+      "check_id": "PAIR001:S002",
+      "rule_id": "PAIR001",
+      "outcome": "PASS",
+      "message": "Mate record counts and ordered read IDs match.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S002",
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "R1_records": 1000,
+        "R2_records": 1000,
+        "R1_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a",
+        "R2_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a"
+      }
+    },
+    {
+      "check_id": "PAIR001:S003",
+      "rule_id": "PAIR001",
+      "outcome": "PASS",
+      "message": "Mate record counts and ordered read IDs match.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S003",
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "R1_records": 1000,
+        "R2_records": 1000,
+        "R1_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a",
+        "R2_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a"
+      }
+    },
+    {
+      "check_id": "PAIR001:S004",
+      "rule_id": "PAIR001",
+      "outcome": "PASS",
+      "message": "Mate record counts and ordered read IDs match.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S004",
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "R1_records": 1000,
+        "R2_records": 1000,
+        "R1_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a",
+        "R2_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a"
+      }
+    },
+    {
+      "check_id": "PAIR001:S005",
+      "rule_id": "PAIR001",
+      "outcome": "PASS",
+      "message": "Mate record counts and ordered read IDs match.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S005",
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "R1_records": 1000,
+        "R2_records": 1000,
+        "R1_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a",
+        "R2_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a"
+      }
+    },
+    {
+      "check_id": "PAIR001:S006",
+      "rule_id": "PAIR001",
+      "outcome": "PASS",
+      "message": "Mate record counts and ordered read IDs match.",
+      "required": true,
+      "severity": null,
+      "sample_id": "S006",
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "R1_records": 1000,
+        "R2_records": 1000,
+        "R1_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a",
+        "R2_read_ids_sha256": "3cac741e36989adc759505285cf45206108f210d37cd225575fa34ae8279758a"
+      }
+    },
+    {
+      "check_id": "SNAP001",
+      "rule_id": "SNAP001",
+      "outcome": "PASS",
+      "message": "Input fingerprints and inventory are unchanged at the final check.",
+      "required": true,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {
+        "fingerprinted_files": 14,
+        "algorithm": "sha256"
+      }
+    },
+    {
+      "check_id": "REF001",
+      "rule_id": "REF001",
+      "outcome": "NOT_RUN",
+      "message": "Independent source checksums are not required by this specification.",
+      "required": false,
+      "severity": null,
+      "sample_id": null,
+      "file_path": null,
+      "record_number": null,
+      "next_action": null,
+      "blocked_by": [],
+      "details": {}
+    }
+  ]
+}

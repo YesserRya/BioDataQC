@@ -1,0 +1,2 @@
+sample_id,organism,run_accession,geo_sample,condition,notes
+SRR6357070,Saccharomyces cerevisiae,SRR6357070,GSM2879618,Wild-type,"Public experimental subset from nf-core; 50,000 pairs; original compressed bytes retained."

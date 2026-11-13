@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>BioDataQC · DEMO_001 · READY</title>
+<style>
+:root{--ink:#172d40;--muted:#596d7c;--line:#dbe4e9;--paper:#fff;--bg:#f1f5f7;--blue:#164d73}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,Segoe UI,sans-serif}
+a{color:var(--blue)}.topbar{background:#12344b;color:#fff}.topbar>div{max-width:1180px;margin:auto;padding:20px 32px;display:flex;justify-content:space-between;gap:16px}
+.brand{font-size:20px;font-weight:750;letter-spacing:-.5px}.eyebrow{text-transform:uppercase;font-size:11px;letter-spacing:1.6px;font-weight:700}
+main{max-width:1180px;margin:auto;padding:32px}.hero{display:flex;justify-content:space-between;align-items:flex-start;gap:24px;margin-bottom:24px}
+h1{font-size:34px;line-height:1.2;letter-spacing:-1px;margin:8px 0 10px}h2{font-size:21px;letter-spacing:-.4px;margin:0 0 15px}p{margin:8px 0}small{display:block;color:var(--muted);font-size:12px;margin-top:7px}
+.muted{color:var(--muted)}.badge{display:inline-block;padding:5px 10px;border-radius:5px;font-size:11px;font-weight:800;letter-spacing:.5px;background:#e9eef2;color:#344a5c;white-space:nowrap}
+.ready,.pass{background:#dcf3e7;color:#165d3b}.blocked,.fail,.blocker{background:#fbe3e0;color:#962f27}.incomplete,.error,.warning{background:#fff0d3;color:#805611}.not_run{background:#e8edf3;color:#4c6074}
+.hero>.badge{font-size:13px;padding:9px 15px;margin-top:10px}.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:24px 0}
+.metric{background:var(--paper);border:1px solid var(--line);border-radius:9px;padding:18px 20px}.metric span{color:var(--muted);font-size:12px;display:block}.metric strong{font-size:30px;font-weight:720;display:block;margin-top:4px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:24px;margin:20px 0}.decision{border-left:5px solid #1b6b95}.decision.blocked-panel{border-left-color:#bb5147}.decision.ready-panel{border-left-color:#2e8060}
+.decision h2{margin:7px 0 10px}.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;border-top:1px solid var(--line);padding-top:16px;margin-top:20px}.contact-grid strong{display:block;font-size:13px;margin-top:4px;overflow-wrap:anywhere}
+.table-wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}th{background:#f3f6f8;color:#415b6c;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.5px;padding:12px}td{padding:13px 12px;vertical-align:top;border-bottom:1px solid #e5ebef;overflow-wrap:anywhere}td p{margin:6px 0 0}tr:last-child td{border-bottom:0}
+code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px}code{overflow-wrap:anywhere}pre{white-space:pre-wrap;overflow-wrap:anywhere;padding:16px;background:#f3f6f8;border-radius:5px}
+details{margin-top:18px;border-top:1px solid var(--line);padding-top:15px}summary{cursor:pointer;font-weight:650;margin-bottom:12px}.empty-state{padding:18px;background:#edf7f1;border:1px solid #d4e7dc;border-radius:6px;color:#245b40}.note{padding:13px 16px;background:#edf2f6;border-radius:5px;font-size:12px;color:#41576a;margin-top:16px}
+footer{font-size:12px;color:var(--muted);padding:6px 0 26px}.trace{overflow-wrap:anywhere}nav{font-size:12px;margin-top:14px}nav a{margin-right:18px;text-decoration:none;font-weight:600}
+@media(max-width:700px){main{padding:20px 16px}.topbar>div{padding:16px}.topbar .eyebrow{display:none}h1{font-size:27px}.hero{gap:12px}.metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.metric{padding:14px}section{padding:18px}.contact-grid{grid-template-columns:1fr;gap:12px}}
+@media print{body{background:#fff;font-size:11px}main{padding:0}.topbar{background:#fff;color:#172d40}.topbar>div{padding:12px 0}section,.metric{break-inside:avoid}nav{display:none}.table-wrap{overflow:visible}}
+</style></head><body>
+<header class="topbar"><div><span class="brand">BioDataQC</span><span class="eyebrow">Delivery quality · Synthetic demo</span></div></header>
+<main><div class="hero"><div><div class="eyebrow muted">DEMO_001 / Fictional Client A</div><h1>Delivery readiness report</h1>
+<p class="muted">Saved validation evidence · Finished 2026-11-12T03:56:54.047863+00:00</p>
+<nav aria-label="Report sections"><a href="#decision">Delivery summary</a><a href="#findings">Findings</a><a href="#technical">Technical evidence</a></nav></div><span class='badge ready'>READY</span></div>
+<div class="metrics"><div class='metric'><span>Expected samples</span><strong>6</strong></div><div class='metric'><span>Expected files present</span><strong>12 / 12</strong></div><div class='metric'><span>Blocking findings</span><strong>0</strong></div><div class='metric'><span>Warnings</span><strong>0</strong></div></div>
+
+<section id="decision" class="decision ready-panel"><div class="eyebrow muted">Delivery summary</div><h2>Eligible for verified local staging</h2><p>Required validation checks completed without blocking findings. Packaging still needs to confirm unchanged inputs and verify the staged copy.</p>
+<div class="contact-grid"><div><span class="muted">Responsible person / team</span><strong>Not assigned</strong></div><div><span class="muted">Next update</span><strong>To be confirmed</strong></div><div><span class="muted">Samples named in findings</span><strong>None named in findings</strong></div></div>
+<div class="note">This status describes the saved run. Current source files have not been revalidated by generating this report. Owner and update information, when supplied, is entered by the operator.</div></section>
+<section id="findings"><h2>Findings & next actions</h2><div class='empty-state'>No blocking findings, warnings or execution errors were recorded.</div></section>
+<section id="technical"><h2>Technical evidence</h2><p class="trace"><strong>Run ID</strong> <code>b4761155-42f9-48ca-a124-270d7bf9aef1</code><br><strong>Rules</strong> 1.1.0 · <strong>Requirements</strong> 1.0.0</p>
+<div class='table-wrap'><table><thead><tr><th scope='col'>Measure</th><th scope='col'>Recorded result</th></tr></thead><tbody><tr><td>Blocking findings</td><td>0</td></tr><tr><td>Execution errors</td><td>0</td></tr><tr><td>Passed checks</td><td>38</td></tr><tr><td>Records scanned</td><td>12000</td></tr><tr><td>Required checks not run</td><td>0</td></tr><tr><td>Valid fastq files</td><td>12</td></tr><tr><td>Warnings</td><td>0</td></tr></tbody></table></div>
+<details><summary>All 39 check outcomes</summary><div class='table-wrap'><table><thead><tr><th scope='col'>Rule</th><th scope='col'>Outcome</th><th scope='col'>Scope</th><th scope='col'>Location</th><th scope='col'>Evidence</th></tr></thead><tbody><tr><td>CFG001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>Dataset</td><td>All declared validation policies are supported.</td></tr><tr><td>CSV001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>Dataset</td><td>CSV was parsed without ambiguous headers or field counts.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>Dataset</td><td>Immediate sequencing-directory entries were inventoried.</td></tr><tr><td>META001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>Dataset</td><td>Required columns and values are present.</td></tr><tr><td>META002</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>Dataset</td><td>Exactly one metadata row exists for every expected sample.</td></tr><tr><td>META003</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>Dataset</td><td>Present nonblank values satisfy vocabulary and whitespace rules.</td></tr><tr><td>META004</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>Dataset</td><td>Optional metadata is populated and no unexpected columns were found.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S001_R1.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S001_R1.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S001_R2.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S001_R2.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S002_R1.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S002_R1.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S002_R2.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S002_R2.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S003_R1.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S003_R1.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S003_R2.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S003_R2.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S004_R1.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S004_R1.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S004_R2.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S004_R2.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S005_R1.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S005_R1.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S005_R2.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S005_R2.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S006_R1.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S006_R1.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>FILE001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S006_R2.fastq.gz</td><td>Expected regular file is present.</td></tr><tr><td>FASTQ001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>sequencing/S006_R2.fastq.gz</td><td>All 1000 FASTQ records satisfy the configured structural checks.</td></tr><tr><td>PAIR001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>S001</td><td>Mate record counts and ordered read IDs match.</td></tr><tr><td>PAIR001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>S002</td><td>Mate record counts and ordered read IDs match.</td></tr><tr><td>PAIR001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>S003</td><td>Mate record counts and ordered read IDs match.</td></tr><tr><td>PAIR001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>S004</td><td>Mate record counts and ordered read IDs match.</td></tr><tr><td>PAIR001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>S005</td><td>Mate record counts and ordered read IDs match.</td></tr><tr><td>PAIR001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>S006</td><td>Mate record counts and ordered read IDs match.</td></tr><tr><td>SNAP001</td><td><span class='badge pass'>PASS</span></td><td>Required</td><td>Dataset</td><td>Input fingerprints and inventory are unchanged at the final check.</td></tr><tr><td>REF001</td><td><span class='badge not_run'>NOT_RUN</span></td><td>Optional</td><td>Dataset</td><td>Independent source checksums are not required by this specification.</td></tr></tbody></table></div></details>
+<details><summary>File inventory · 12 entries</summary><div class='table-wrap'><table><thead><tr><th scope='col'>Relative path</th><th scope='col'>Sample</th><th scope='col'>Read</th><th scope='col'>Inventory status</th><th scope='col'>Bytes</th></tr></thead><tbody><tr><td>sequencing/S001_R1.fastq.gz</td><td>S001</td><td>R1</td><td>PRESENT</td><td>36863</td></tr><tr><td>sequencing/S001_R2.fastq.gz</td><td>S001</td><td>R2</td><td>PRESENT</td><td>36954</td></tr><tr><td>sequencing/S002_R1.fastq.gz</td><td>S002</td><td>R1</td><td>PRESENT</td><td>36872</td></tr><tr><td>sequencing/S002_R2.fastq.gz</td><td>S002</td><td>R2</td><td>PRESENT</td><td>36899</td></tr><tr><td>sequencing/S003_R1.fastq.gz</td><td>S003</td><td>R1</td><td>PRESENT</td><td>36923</td></tr><tr><td>sequencing/S003_R2.fastq.gz</td><td>S003</td><td>R2</td><td>PRESENT</td><td>36870</td></tr><tr><td>sequencing/S004_R1.fastq.gz</td><td>S004</td><td>R1</td><td>PRESENT</td><td>36938</td></tr><tr><td>sequencing/S004_R2.fastq.gz</td><td>S004</td><td>R2</td><td>PRESENT</td><td>36902</td></tr><tr><td>sequencing/S005_R1.fastq.gz</td><td>S005</td><td>R1</td><td>PRESENT</td><td>36901</td></tr><tr><td>sequencing/S005_R2.fastq.gz</td><td>S005</td><td>R2</td><td>PRESENT</td><td>36931</td></tr><tr><td>sequencing/S006_R1.fastq.gz</td><td>S006</td><td>R1</td><td>PRESENT</td><td>36867</td></tr><tr><td>sequencing/S006_R2.fastq.gz</td><td>S006</td><td>R2</td><td>PRESENT</td><td>36843</td></tr></tbody></table></div></details>
+<details><summary>Sample metadata · 6 records</summary><div class='table-wrap'><table><thead><tr><th scope='col'>sample_id</th><th scope='col'>condition</th><th scope='col'>tissue</th><th scope='col'>notes</th></tr></thead><tbody><tr><td>S001</td><td>Control</td><td>Liver</td><td>Synthetic fixture for S001; no real sample</td></tr><tr><td>S002</td><td>Control</td><td>Liver</td><td>Synthetic fixture for S002; no real sample</td></tr><tr><td>S003</td><td>Control</td><td>Liver</td><td>Synthetic fixture for S003; no real sample</td></tr><tr><td>S004</td><td>Treated</td><td>Liver</td><td>Synthetic fixture for S004; no real sample</td></tr><tr><td>S005</td><td>Treated</td><td>Liver</td><td>Synthetic fixture for S005; no real sample</td></tr><tr><td>S006</td><td>Treated</td><td>Liver</td><td>Synthetic fixture for S006; no real sample</td></tr></tbody></table></div></details>
+<details><summary>Input fingerprints · 14 files</summary><div class='table-wrap'><table><thead><tr><th scope='col'>Relative path</th><th scope='col'>SHA-256</th></tr></thead><tbody><tr><td>requirements.json</td><td><code>ed3236f4625b99f72951dc44241b9c066fa2ff610f84ca3dd22bc765f259f14b</code></td></tr><tr><td>samples.csv</td><td><code>3c44da400a1967f2ce4a9f992e3efc61a8818f3bff3bdcafa980d142e03a1a68</code></td></tr><tr><td>sequencing/S001_R1.fastq.gz</td><td><code>3eea82f210728b97ae6dd7cbb60eac49ecacfb8ea541e56146c4ee71a860d89d</code></td></tr><tr><td>sequencing/S001_R2.fastq.gz</td><td><code>e6cedf6731c3bef992165c3a94efba6769439c41c68feadcef570705c4022a0e</code></td></tr><tr><td>sequencing/S002_R1.fastq.gz</td><td><code>87de23970a608de75ea5326d859f3895e4cabcb0724c6113651f24f00b6f6b7d</code></td></tr><tr><td>sequencing/S002_R2.fastq.gz</td><td><code>63e85cb680c80fa949228d8f3c5b78f4c836a7faa23727eb50f43cba34ff28be</code></td></tr><tr><td>sequencing/S003_R1.fastq.gz</td><td><code>4dd5dfd78958e06cca04c5dac82f34176d1ce226de187faadc9d4f44b022b1e2</code></td></tr><tr><td>sequencing/S003_R2.fastq.gz</td><td><code>324eff2f9175f82fc1c9b9e1dd74b9c02181297c3b802d2928c13e546eb540fb</code></td></tr><tr><td>sequencing/S004_R1.fastq.gz</td><td><code>3dd98d1f4888d4d87a8880a81c476d7b28b7b65aa6ac9357de3c12b46b12ca9b</code></td></tr><tr><td>sequencing/S004_R2.fastq.gz</td><td><code>88d19a6f5611ea5d7d12378110a8595bd0b8dfd6ebda3b08d51fb1e121b4d87b</code></td></tr><tr><td>sequencing/S005_R1.fastq.gz</td><td><code>7a4be0aa849fde2fe683264325804921278973ddfb7ffbb30f29df75c806d2b5</code></td></tr><tr><td>sequencing/S005_R2.fastq.gz</td><td><code>18c02fcb918edfa0f1dea3bc071e4e96165c776a1e0300e6af52666bc9aebba7</code></td></tr><tr><td>sequencing/S006_R1.fastq.gz</td><td><code>2699c010928f2215900e369421672c34a999e10b4e25109a061aa0a15a2a7547</code></td></tr><tr><td>sequencing/S006_R2.fastq.gz</td><td><code>ec5665c577b1348e53e46dfb44fc108106fa06a884ce99220ce31ac47ee5c1b6</code></td></tr></tbody></table></div></details>
+<details><summary>Applied requirements</summary><pre>{
+  &quot;client_label&quot;: &quot;Fictional Client A&quot;,
+  &quot;expected_samples&quot;: [
+    &quot;S001&quot;,
+    &quot;S002&quot;,
+    &quot;S003&quot;,
+    &quot;S004&quot;,
+    &quot;S005&quot;,
+    &quot;S006&quot;
+  ],
+  &quot;fastq&quot;: {
+    &quot;allow_empty_sequences&quot;: false,
+    &quot;encoding&quot;: &quot;ascii&quot;,
+    &quot;format&quot;: &quot;four_line&quot;,
+    &quot;header_template&quot;: &quot;@{read_id}/{mate}&quot;,
+    &quot;mate_for_read&quot;: {
+      &quot;R1&quot;: &quot;1&quot;,
+      &quot;R2&quot;: &quot;2&quot;
+    },
+    &quot;minimum_records_per_file&quot;: 1,
+    &quot;paired_read_ids_must_match_in_order&quot;: true,
+    &quot;paired_record_counts_must_match&quot;: true,
+    &quot;quality_ascii_max&quot;: 126,
+    &quot;quality_ascii_min&quot;: 33,
+    &quot;quality_encoding&quot;: &quot;phred33&quot;,
+    &quot;read_id_pattern&quot;: &quot;READ_[0-9]{6}&quot;,
+    &quot;scan_all_records&quot;: true,
+    &quot;separator_line&quot;: &quot;+&quot;,
+    &quot;sequence_alphabet&quot;: &quot;ACGTN&quot;,
+    &quot;sequence_quality_lengths_must_match&quot;: true
+  },
+  &quot;integrity&quot;: {
+    &quot;algorithm&quot;: &quot;sha256&quot;,
+    &quot;require_independent_source_checksums&quot;: false,
+    &quot;snapshot_inputs&quot;: [
+      &quot;requirements.json&quot;,
+      &quot;samples.csv&quot;,
+      &quot;sequencing/*&quot;
+    ],
+    &quot;verify_staged_copy_against_validation_snapshot&quot;: true
+  },
+  &quot;metadata&quot;: {
+    &quot;allowed_values&quot;: {
+      &quot;condition&quot;: [
+        &quot;Control&quot;,
+        &quot;Treated&quot;
+      ]
+    },
+    &quot;automatic_value_correction&quot;: false,
+    &quot;blank_or_absent_notes&quot;: &quot;warn&quot;,
+    &quot;blank_required_values&quot;: &quot;block&quot;,
+    &quot;case_sensitive_values&quot;: true,
+    &quot;delimiter&quot;: &quot;,&quot;,
+    &quot;duplicate_sample_ids&quot;: &quot;block&quot;,
+    &quot;encoding&quot;: &quot;utf-8&quot;,
+    &quot;file&quot;: &quot;samples.csv&quot;,
+    &quot;missing_or_unexpected_sample_ids&quot;: &quot;block&quot;,
+    &quot;nonblank_values_with_outer_whitespace&quot;: &quot;block&quot;,
+    &quot;one_row_per_sample&quot;: true,
+    &quot;optional_columns&quot;: [
+      &quot;notes&quot;
+    ],
+    &quot;required_columns&quot;: [
+      &quot;sample_id&quot;,
+      &quot;condition&quot;,
+      &quot;tissue&quot;
+    ],
+    &quot;sample_id_column&quot;: &quot;sample_id&quot;,
+    &quot;unexpected_columns&quot;: &quot;warn&quot;
+  },
+  &quot;packaging&quot;: {
+    &quot;allow_blockers&quot;: false,
+    &quot;allow_incomplete_required_checks&quot;: false,
+    &quot;allow_warnings&quot;: true,
+    &quot;exclude_manifest_from_own_inventory&quot;: true,
+    &quot;manifest_columns&quot;: [
+      &quot;relative_path&quot;,
+      &quot;sample_id&quot;,
+      &quot;read&quot;,
+      &quot;size_bytes&quot;,
+      &quot;sha256&quot;
+    ],
+    &quot;manifest_format&quot;: &quot;csv&quot;,
+    &quot;mode&quot;: &quot;local_staging_only&quot;,
+    &quot;preserve_original_inputs&quot;: true,
+    &quot;report_format&quot;: &quot;html&quot;
+  },
+  &quot;project_id&quot;: &quot;DEMO_001&quot;,
+  &quot;sequencing&quot;: {
+    &quot;compression&quot;: &quot;gzip&quot;,
+    &quot;directory&quot;: &quot;sequencing&quot;,
+    &quot;empty_files&quot;: &quot;block&quot;,
+    &quot;filename_template&quot;: &quot;{sample_id}_{read}.fastq.gz&quot;,
+    &quot;files_per_read_per_sample&quot;: 1,
+    &quot;layout&quot;: &quot;paired_end&quot;,
+    &quot;reads&quot;: [
+      &quot;R1&quot;,
+      &quot;R2&quot;
+    ],
+    &quot;scan_scope&quot;: &quot;immediate_children&quot;,
+    &quot;unexpected_files&quot;: &quot;block&quot;,
+    &quot;unexpected_subdirectories&quot;: &quot;block&quot;
+  },
+  &quot;specification_version&quot;: &quot;1.0.0&quot;,
+  &quot;synthetic_data_only&quot;: true
+}</pre></details></section>
+<footer>Local data-quality prototype. Structural validation and copy consistency are assessed; biological quality and original pre-receipt integrity are outside this profile.</footer></main></body></html>

@@ -1,0 +1,81 @@
+{
+  "specification_version": "1.0.0",
+  "project_id": "DEMO_001",
+  "client_label": "Fictional Client A",
+  "synthetic_data_only": true,
+  "expected_samples": [
+    "S001",
+    "S002",
+    "S003",
+    "S004",
+    "S005",
+    "S006"
+  ],
+  "metadata": {
+    "file": "samples.csv",
+    "encoding": "utf-8",
+    "delimiter": ",",
+    "one_row_per_sample": true,
+    "sample_id_column": "sample_id",
+    "required_columns": ["sample_id", "condition", "tissue"],
+    "optional_columns": ["notes"],
+    "allowed_values": {
+      "condition": ["Control", "Treated"]
+    },
+    "blank_required_values": "block",
+    "blank_or_absent_notes": "warn",
+    "duplicate_sample_ids": "block",
+    "missing_or_unexpected_sample_ids": "block",
+    "unexpected_columns": "warn",
+    "nonblank_values_with_outer_whitespace": "block",
+    "case_sensitive_values": true,
+    "automatic_value_correction": false
+  },
+  "sequencing": {
+    "directory": "sequencing",
+    "layout": "paired_end",
+    "reads": ["R1", "R2"],
+    "files_per_read_per_sample": 1,
+    "filename_template": "{sample_id}_{read}.fastq.gz",
+    "compression": "gzip",
+    "empty_files": "block",
+    "unexpected_files": "block",
+    "unexpected_subdirectories": "block",
+    "scan_scope": "immediate_children"
+  },
+  "fastq": {
+    "format": "four_line",
+    "encoding": "ascii",
+    "sequence_alphabet": "ACGTN",
+    "allow_empty_sequences": false,
+    "separator_line": "+",
+    "quality_encoding": "phred33",
+    "quality_ascii_min": 33,
+    "quality_ascii_max": 126,
+    "sequence_quality_lengths_must_match": true,
+    "header_template": "@{read_id}/{mate}",
+    "read_id_pattern": "READ_[0-9]{6}",
+    "mate_for_read": {"R1": "1", "R2": "2"},
+    "paired_record_counts_must_match": true,
+    "paired_read_ids_must_match_in_order": true,
+    "minimum_records_per_file": 1,
+    "scan_all_records": true
+  },
+  "integrity": {
+    "algorithm": "sha256",
+    "snapshot_inputs": ["requirements.json", "samples.csv", "sequencing/*"],
+    "require_independent_source_checksums": false,
+    "verify_staged_copy_against_validation_snapshot": true
+  },
+  "packaging": {
+    "mode": "local_staging_only",
+    "report_format": "html",
+    "manifest_format": "csv",
+    "manifest_columns": ["relative_path", "sample_id", "read", "size_bytes", "sha256"],
+    "exclude_manifest_from_own_inventory": true,
+    "preserve_original_inputs": true,
+    "allow_blockers": false,
+    "allow_warnings": true,
+    "allow_incomplete_required_checks": false
+  }
+}
