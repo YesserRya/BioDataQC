@@ -113,7 +113,7 @@ The test suite covers validation, FASTQ handling, SQLite history, comparisons, r
 
 ## Scope and limitations
 
-This is a **personal proof of concept**, not a regulated medical system, laboratory information management system (LIMS), sequencing pipeline, or PRECURSION product. It does not align reads, perform variant calling, trim adapters, or make biological/clinical acceptance decisions. Validation policy is configured for each delivery; a passed result is specific to those rules and the checked file snapshot. Use only authorized data and review outputs before any real-world delivery.
+This is a **personal proof of concept**, not a regulated medical system, laboratory information management system (LIMS), sequencing pipeline, or commercial product. It does not align reads, perform variant calling, trim adapters, or make biological/clinical acceptance decisions. Validation policy is configured for each delivery; a passed result is specific to those rules and the checked file snapshot. Use only authorized data and review outputs before any real-world delivery.
 
 ## Author
 
